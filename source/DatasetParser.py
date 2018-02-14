@@ -1,8 +1,8 @@
 import re
-from nltk.corpus import stopwords
+import math
 
 
-class parser:
+class Parser:
     def parsefile(self, in_file_name, out_file_name):
 
         file = open(in_file_name, 'r', encoding="utf8")
@@ -15,7 +15,7 @@ class parser:
 
         for i in range(0, len(content)):
 
-            if i % (int(len(content) / 100)) is 0:
+            if i % math.floor((len(content) - 1) / 100) is 0:
                 percent += 1
                 print(str(percent) + "%")
 
