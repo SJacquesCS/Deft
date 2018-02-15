@@ -8,6 +8,6 @@ wordset = "../wordsets/airlines_wordset.txt"
 alphabet = "../alphabets/airlines_alphabet.txt"
 
 parser = Parser()
-parser.parsefile(dataset, parsed_dataset, alphabet)
-parser.createdict(parsed_dataset, charset, wordset, dictionary)
+parser.parsefile(dataset, charset, wordset, parsed_dataset, alphabet)
+parser.createdict(parsed_dataset, dictionary)
 parser.closefiles()

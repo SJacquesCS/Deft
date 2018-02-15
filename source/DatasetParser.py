@@ -11,14 +11,40 @@ class Parser:
         self.char_file = None
         self.word_file = None
 
-    def parsefile(self, data_filename, parsed_filename, alphabet_filename):
+    def parsefile(self, data_filename, char_filename, word_filename, parsed_filename, alphabet_filename):
         self.data_file = open(data_filename, "r", encoding="utf-8")
         self.alphabet_file = open(alphabet_filename, "r", encoding="utf-8")
 
+        content = self.data_file.read()
+        lines = content.split("\n")
         alphabet = self.alphabet_file.read().split(",")
+        data = content.split()
+        unique_words = set(data)
+        unique_chars = set(content)
+
+        output = "Count: " + str(len(unique_words)) + "\n\n"
+
+        for word in unique_words:
+            output += word + "\n"
+
+        self.word_file = open(word_filename, 'w', encoding="utf-8")
+        self.word_file.write(output)
+        self.word_file.close()
+
+        print("Wordset created")
+
+        output = "Count: " + str(len(unique_chars)) + "\n\n"
+
+        for char in unique_chars:
+            output += char + "\n"
+
+        self.char_file = open(char_filename, 'w', encoding="utf-8")
+        self.char_file.write(output)
+        self.char_file.close()
+
+        print("Charset created")
 
         output = ""
-        lines = self.data_file.readlines()
 
         for line in lines:
             try:
@@ -49,8 +75,11 @@ class Parser:
                         if char in alphabet:
                             new_word += char
 
-                    # Remove all white spaces
+                    # Remove white spaces
                     new_word.strip()
+
+                    # Remove character repetitions
+                    new_word = re.sub(r'([a-z])\1+', r'\1', new_word)
 
                     new_message += new_word + ","
 
@@ -64,36 +93,9 @@ class Parser:
 
         print("File parsed")
 
-    def createdict(self, parsed_filename, char_filename, word_filename, dict_filename):
+    def createdict(self, parsed_filename, dict_filename):
         parsed_file = open(parsed_filename, "r", encoding="utf-8")
         content = str.lower(parsed_file.read())
-        data = content.split(",")
-        unique_words = set(data)
-        unique_chars = set(content)
-
-        output = "Count: " + str(len(unique_words)) + "\n\n"
-
-        print(unique_words)
-
-        for word in unique_words:
-            output += word + "\n"
-
-        print("Wordset created")
-
-        self.word_file = open(word_filename, 'w', encoding="utf-8")
-        self.word_file.write(output)
-        self.word_file.close()
-
-        output = "Count: " + str(len(unique_chars)) + "\n\n"
-
-        for char in unique_chars:
-            output += char + "\n"
-
-        print("Charset created")
-
-        self.char_file = open(char_filename, 'w', encoding="utf-8")
-        self.char_file.write(output)
-        self.char_file.close()
 
         lines = content.split("\n")
         output = "count," + str(len(lines)) + "\n\n"
