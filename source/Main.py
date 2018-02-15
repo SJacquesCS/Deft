@@ -1,18 +1,13 @@
-from source.DictionaryBuilder import Dictionary
 from source.DatasetParser import Parser
 
 dataset = "../datasets/airlines_dataset.csv"
-parsed_dataset = "../datasets_parsed/parsed_airlines_dataset.csv"
-dictionnary_dataset = "../datasets_dictionnaries/parsed_airlines_dictionnary.csv"
+parsed_dataset = "../parsed_datasets/parsed_airlines_dataset.csv"
+dictionary = "../dictionaries/airlines_dictionary.csv"
+charset = "../charsets/airlines_charset.txt"
+wordset = "../wordsets/airlines_wordset.txt"
+alphabet = "../alphabets/airlines_alphabet.txt"
 
-print("\nParsing Dataset\n")
-
-p = Parser()
-p.parsefile(dataset,
-            parsed_dataset)
-
-print("\nCreating Dictionnary\n")
-
-d = Dictionary()
-d.parsefile(parsed_dataset)
-d.saveinfo(dictionnary_dataset)
+parser = Parser()
+parser.parsefile(dataset, parsed_dataset, alphabet)
+parser.createdict(parsed_dataset, charset, wordset, dictionary)
+parser.closefiles()

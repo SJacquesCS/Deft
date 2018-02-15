@@ -1,72 +1,123 @@
+import operator
 import re
-import math
 
 
 class Parser:
-    def parsefile(self, in_file_name, out_file_name):
+    def __init__(self):
+        self.dict = {}
+        self.data_file = None
+        self.alphabet_file = None
+        self.dict_file = None
+        self.char_file = None
+        self.word_file = None
 
-        file = open(in_file_name, 'r', encoding="utf8")
+    def parsefile(self, data_filename, parsed_filename, alphabet_filename):
+        self.data_file = open(data_filename, "r", encoding="utf-8")
+        self.alphabet_file = open(alphabet_filename, "r", encoding="utf-8")
 
-        new_content = ""
-        percent = 0
+        alphabet = self.alphabet_file.read().split(",")
 
-        with file as f:
-            content = f.readlines()
+        output = ""
+        lines = self.data_file.readlines()
 
-        for i in range(0, len(content)):
-
-            if i % math.floor((len(content) - 1) / 100) is 0:
-                percent += 1
-                print(str(percent) + "%")
-
+        for line in lines:
             try:
-                sentiment, sentence = content[i].split(",")
+                sentiment, message = line.split(",")
 
-                if sentiment != "positive"\
-                    and sentiment != "negative"\
-                    and sentiment != "neutral": continue
+                # If line is not starting by a sentiment, skip it
+                if sentiment != "positive" \
+                        and sentiment != "negative" \
+                        and sentiment != "neutral":
+                    continue
 
-                # Remove white spaces
-                sentence.strip()
+                output += sentiment + ","
 
-                # Remove special characters
-                special_chars = re.compile("["
-                                      u"\U0001F600-\U0001F64F"  # emoticons
-                                      u"\U0001F300-\U0001F5FF"  # symbols and pictographs
-                                      u"\U0001F680-\U0001F6FF"  # transport and map symbols
-                                      u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
-                                      "]+", flags=re.UNICODE)
-                sentence = special_chars.sub(r'', sentence)
-                sentence = re.sub('[!@#$%^&*()\-_+}{|":?><.;/=~,“”]', ' ', sentence)
+                # Remove URLs
+                message = re.sub(r'^https?:\/\/.*[\r\n]*', '', message, flags=re.MULTILINE)
 
-                # Split words
-                splitsentence = sentence.split()
-                sentence = sentiment + ","
+                words = message.split()
+                new_message = ""
 
-                for word in splitsentence:
+                for word in words:
+                    new_word = ""
+
                     # Change word to lower case
                     word = str.lower(str(word))
 
+                    # Remove special characters
+                    for char in word:
+                        if char in alphabet:
+                            new_word += char
+
                     # Remove all white spaces
-                    word.strip()
+                    new_word.strip()
 
-                    # Remove words with 0 or 1 letter
-                    if len(word) < 2: continue
+                    new_message += new_word + ","
 
-                    # Remove stop words
-                    # if word in stopwords.words("english"): continue
-
-                    sentence += word + ","
-
-                sentence = sentence[:-1]
-
-                new_content += sentence + "\n"
+                output += new_message[:-1] + "\n"
             except ValueError:
                 pass
 
-        file.close()
+        parsed_file = open(parsed_filename, 'w', encoding="utf8")
+        parsed_file.write(output)
+        parsed_file.close()
 
-        file = open(out_file_name, 'w', encoding="utf8")
-        file.write(new_content)
-        print("100%")
-        file.close()
+        print("File parsed")
+
+    def createdict(self, parsed_filename, char_filename, word_filename, dict_filename):
+        parsed_file = open(parsed_filename, "r", encoding="utf-8")
+        content = str.lower(parsed_file.read())
+        data = content.split()
+        unique_words = set(data)
+        unique_chars = set(content)
+
+        output = "Count: " + str(len(unique_words)) + "\n\n"
+
+        for word in unique_words:
+            output += word + "\n"
+
+        print("Wordset created")
+
+        self.word_file = open(word_filename, 'w', encoding="utf-8")
+        self.word_file.write(output)
+        self.word_file.close()
+
+        output = "Count: " + str(len(unique_chars)) + "\n\n"
+
+        for char in unique_chars:
+            output += char + "\n"
+
+        print("Charset created")
+
+        self.char_file = open(char_filename, 'w', encoding="utf-8")
+        self.char_file.write(output)
+        self.char_file.close()
+
+        lines = content.split("\n")
+        output = "count," + str(len(lines)) + "\n\n"
+
+        for line in lines[1:]:
+            words = line.split(",")
+
+            for word in words[1:]:
+                if word in self.dict:
+                    self.dict[word] += 1
+                else:
+                    self.dict[word] = 1
+
+        self.dict = sorted(self.dict.items(), key=operator.itemgetter(1), reverse=True)
+
+        for word, count in self.dict:
+            output += word + "," + str(count) + "\n"
+
+        self.dict_file = open(dict_filename, "w", encoding="utf-8")
+        self.dict_file.write(output)
+
+        print("Dictionary created")
+
+    def closefiles(self):
+        self.data_file.close()
+        self.alphabet_file.close()
+        self.dict_file.close()
+        self.char_file.close()
+        self.word_file.close()
