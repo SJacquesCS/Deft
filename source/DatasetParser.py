@@ -33,7 +33,7 @@ class Parser:
                 output += sentiment + ","
 
                 # Remove URLs
-                message = re.sub(r'^https?:\/\/.*[\r\n]*', '', message, flags=re.MULTILINE)
+                message = re.sub(r'\w+:\/{2}[\d\w-]+(\.[\d\w-]+)*(?:(?:\/[^\s/]*))*', '', message, flags=re.MULTILINE)
 
                 words = message.split()
                 new_message = ""
