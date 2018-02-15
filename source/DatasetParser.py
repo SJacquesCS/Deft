@@ -67,11 +67,13 @@ class Parser:
     def createdict(self, parsed_filename, char_filename, word_filename, dict_filename):
         parsed_file = open(parsed_filename, "r", encoding="utf-8")
         content = str.lower(parsed_file.read())
-        data = content.split()
+        data = content.split(",")
         unique_words = set(data)
         unique_chars = set(content)
 
         output = "Count: " + str(len(unique_words)) + "\n\n"
+
+        print(unique_words)
 
         for word in unique_words:
             output += word + "\n"
