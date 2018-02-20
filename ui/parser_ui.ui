@@ -24,7 +24,7 @@
     </child>
     <child>
       <object class="ttk.Entry" id="dataset_entry">
-        <property name="text" translatable="yes">airlines_dataset.csv</property>
+        <property name="text" translatable="yes">deft_dataset.csv</property>
         <property name="validate">none</property>
         <property name="width">50</property>
         <layout>
@@ -72,7 +72,7 @@
     <child>
       <object class="ttk.Entry" id="wordset_entry">
         <property name="exportselection">true</property>
-        <property name="text" translatable="yes">airlines_wordset.csv</property>
+        <property name="text" translatable="yes">deft_wordset.csv</property>
         <property name="validate">none</property>
         <property name="width">25</property>
         <layout>
@@ -129,7 +129,7 @@
       <object class="ttk.Entry" id="charset_entry">
         <property name="font">TkDefaultFont</property>
         <property name="justify">left</property>
-        <property name="text" translatable="yes">airlines_charset.csv</property>
+        <property name="text" translatable="yes">deft_charset.csv</property>
         <property name="validate">none</property>
         <property name="width">25</property>
         <layout>
@@ -172,7 +172,7 @@
     <child>
       <object class="ttk.Entry" id="alphabet_entry">
         <property name="justify">left</property>
-        <property name="text" translatable="yes">airlines_alphabet.csv</property>
+        <property name="text" translatable="yes">deft_alphabet.csv</property>
         <property name="width">50</property>
         <layout>
           <property name="column">1</property>
@@ -201,7 +201,7 @@
     <child>
       <object class="ttk.Entry" id="parse_entry">
         <property name="takefocus">false</property>
-        <property name="text" translatable="yes">airlines_parse.csv</property>
+        <property name="text" translatable="yes">deft_parse.csv</property>
         <property name="width">25</property>
         <layout>
           <property name="column">1</property>
@@ -242,7 +242,7 @@
     </child>
     <child>
       <object class="ttk.Entry" id="dict_entry">
-        <property name="text" translatable="yes">airlines_dictionary.csv</property>
+        <property name="text" translatable="yes">deft_dictionary.csv</property>
         <property name="width">25</property>
         <layout>
           <property name="column">1</property>

@@ -14,10 +14,10 @@ class Application(pygubu.TkApplication):
         self.parser = Parser()
 
         callbacks = {
-            "create_parse": self.createparse
+            "create_parse": self.createparse,
             # "create_wordset": self.createwordset,
             # "create_charset": self.createcharset,
-            # "create_dict": self.createdict
+            "create_dict": self.createdict
         }
 
         builder.connect_callbacks(callbacks)
@@ -46,9 +46,10 @@ class Application(pygubu.TkApplication):
             info_text = "File \"" + f.filename + "\" not found"
             self.info_label.configure(text=info_text, foreground="red")
 
-    # def createwordset(self):
-    #
-    #
+    def createdict(self):
+        self.parser.createdict("../parsed_datasets/" + self.parse_entry.get(),
+                               "../dictionaries/" + self.dict_entry.get())
+
     # def createcharset(self):
     #
     #

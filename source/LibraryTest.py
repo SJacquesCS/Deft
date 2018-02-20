@@ -1,28 +1,26 @@
-import matplotlib.pyplot as plt
-import numpy as np
+import os
 
-file = open("../dictionaries/airlines_dictionary.csv")
+path_1 = "C:/Users/Jacques/Desktop/DEFT/CSV/deft_dataset.csv"
+path_2 = "C:/Users/Jacques/Desktop/DEFT/CSV/deft_dataset_sentiment.csv"
+content = ""
 
-content = file.read()
-lines = content.split("\n")
-counts = []
-prev_val = 50000
-x = []
+file_1 = open(path_1, 'r', encoding='utf-8')
+file_2 = open(path_2, 'r', encoding='utf-8')
 
-for line in lines[2:]:
-    count = line.split(",")[1]
-    counts.append(count)
+lines_1 = file_1.readlines()
+lines_2 = file_2.readlines()
 
-# Data for plotting
-bins = int(len(lines) / 1000)
+percent = 0
 
-print(bins)
+for i in range(0, len(lines_1)):
+    if i % int(len(lines_1) / 100) == 0:
+        percent += 1
+        print(str(percent) + "%")
 
-# Note that using plt.subplots below is equivalent to using
-# fig = plt.figure and then ax = fig.add_subplot(111)
-fig, ax = plt.subplots()
-ax.plot(y=counts)
+    message = lines_1[i].split("\t")[1]
+    sentiment = lines_2[i].split("|")[1].strip()
+    content += sentiment + "," + message
 
-#fig.savefig("test.png")
-fig.canvas.set_window_title("TEST")
-plt.show()
+file_2 = open("C:/Users/Jacques/Desktop/DEFT/CSV/deft_dataset_final.csv", 'w', encoding='utf-8')
+
+file_2.write(content)

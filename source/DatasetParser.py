@@ -45,18 +45,25 @@ class Parser:
         print("Charset created")
 
         output = ""
+        sentiments = ""
+
+        print(len(lines))
 
         for line in lines:
             try:
-                sentiment, message = line.split(",")
+                sentiment, message = line.split(",\"")
+
+                sentiments += sentiment + "\n"
+
+                sentiment = str.lower(sentiment)
 
                 # If line is not starting by a sentiment, skip it
-                if sentiment != "positive" \
-                        and sentiment != "negative" \
-                        and sentiment != "neutral":
+                if sentiment != "positif" \
+                        and sentiment != "negatif" \
+                        and sentiment != "neutre"\
+                        and sentiment != "mixposneg"\
+                        and sentiment != "inconnu":
                     continue
-
-                output += sentiment + ","
 
                 # Remove URLs
                 message = re.sub(r'\w+:\/{2}[\d\w-]+(\.[\d\w-]+)*(?:(?:\/[^\s/]*))*', '', message, flags=re.MULTILINE)
@@ -90,6 +97,10 @@ class Parser:
         parsed_file = open(parsed_filename, 'w', encoding="utf8")
         parsed_file.write(output)
         parsed_file.close()
+
+        sentiment_file = open("sentiments.csv", "w", encoding="utf-8")
+        sentiment_file.write(sentiments)
+        sentiment_file.close()
 
         print("File parsed")
 
