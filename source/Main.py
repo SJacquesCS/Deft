@@ -9,7 +9,7 @@ sentiments_file = "../sentiments/deft_sentiments.csv"
 parsed_file = "../parsed_datasets/deft_parse.csv"
 stopwords_file = "../stopwords/deft_stopwords.csv"
 wordset_file = "../wordsets/deft_wordset.csv"
-final_parse_file = "../parsed_datasets/final_parsed_dataset.csv"
+final_parse_file = "../parsed_datasets/final_deft_parse.csv"
 
 parser = Parser()
 
