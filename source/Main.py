@@ -1,62 +1,34 @@
-import tkinter
-import pygubu
-
 from source.DatasetParser import Parser
 
+alphabet_file = "../alphabets/deft_alphabet.csv"
+charset_file = "../charsets/deft_charset.csv"
+dataset_file = "../datasets/deft_dataset.csv"
+dictionary_file = "../dictionaries/deft_dictionary.csv"
+updated_dictionary_file = "../dictionaries/deft_dictionary_updated.csv"
+sentiments_file = "../sentiments/deft_sentiments.csv"
+parsed_file = "../parsed_datasets/deft_parse.csv"
+stopwords_file = "../stopwords/deft_stopwords.csv"
+wordset_file = "../wordsets/deft_wordset.csv"
+final_parse_file = "../parsed_datasets/final_parsed_dataset.csv"
 
-class Application(pygubu.TkApplication):
-    def _create_ui(self):
-        self.builder = builder = pygubu.Builder()
-        builder.add_from_file("../ui/parser_ui.ui")
-        self.mainwindow = builder.get_object("mainwindow", self.master)
-        self.set_title("Dataset Parser")
+parser = Parser()
 
-        self.parser = Parser()
+# parser.generate_wordset(data_filename=dataset_file,
+#                         word_filename=wordset_file)
+#
+# parser.generate_charset(data_filename=dataset_file,
+#                         char_filename=charset_file)
+#
+# parser.generate_first_parse(data_filename=dataset_file,
+#                             sentiments_filename=sentiments_file,
+#                             parsed_filename=parsed_file,
+#                             alphabet_filename=alphabet_file)
+#
+# parser.first_dictionary(parsed_filename=parsed_file,
+#                         dict_filename=dictionary_file)
 
-        callbacks = {
-            "create_parse": self.createparse,
-            # "create_wordset": self.createwordset,
-            # "create_charset": self.createcharset,
-            "create_dict": self.createdict
-        }
+parser.second_parse(parse_filename=parsed_file,
+                    final_parse_filename=final_parse_file,
+                    updated_dict_filename=updated_dictionary_file)
 
-        builder.connect_callbacks(callbacks)
-
-        self.dataset_entry = builder.get_object("dataset_entry")
-        self.alphabet_entry = builder.get_object("alphabet_entry")
-        self.wordset_entry = builder.get_object("wordset_entry")
-        self.charset_entry = builder.get_object("charset_entry")
-        self.parse_entry = builder.get_object("parse_entry")
-        self.dict_entry = builder.get_object("dict_entry")
-        self.info_label = builder.get_object("info_label")
-
-        self.info_label.configure(foreground="gray")
-
-    def createparse(self):
-        try:
-            self.parser.parsefile("../datasets/" + self.dataset_entry.get(),
-                                  "../charsets/" + self.charset_entry.get(),
-                                  "../wordsets/" + self.wordset_entry.get(),
-                                  "../parsed_datasets/" + self.parse_entry.get(),
-                                  "../alphabets/" + self.alphabet_entry.get())
-
-            info_text = "Dataset parsed in \" ../parsed_datasets/" + self.parse_entry.get()
-            self.info_label.configure(text=info_text, foreground="green")
-        except FileNotFoundError as f:
-            info_text = "File \"" + f.filename + "\" not found"
-            self.info_label.configure(text=info_text, foreground="red")
-
-    def createdict(self):
-        self.parser.createdict("../parsed_datasets/" + self.parse_entry.get(),
-                               "../dictionaries/" + self.dict_entry.get())
-
-    # def createcharset(self):
-    #
-    #
-    # def createdict(self):
-
-
-if __name__ == "__main__":
-    root = tkinter.Tk()
-    app = Application(root)
-    root.mainloop()
+parser.closefiles()

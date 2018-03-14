@@ -10,51 +10,69 @@ class Parser:
         self.dict_file = None
         self.char_file = None
         self.word_file = None
+        self.updated_dict_file = None
+        self.final_parse_file = None
 
-    def parsefile(self, data_filename, char_filename, word_filename, parsed_filename, alphabet_filename):
+    def generate_wordset(self, data_filename, word_filename):
+
+        # Load required file
         self.data_file = open(data_filename, "r", encoding="utf-8")
-        self.alphabet_file = open(alphabet_filename, "r", encoding="utf-8")
 
+        # Read file and split contents
         content = self.data_file.read()
-        lines = content.split("\n")
-        alphabet = self.alphabet_file.read().split(",")
         data = content.split()
         unique_words = set(data)
-        unique_chars = set(content)
 
+        # Create wordset
         output = "Count: " + str(len(unique_words)) + "\n\n"
-
         for word in unique_words:
             output += word + "\n"
 
+        # Output wordset to file
         self.word_file = open(word_filename, 'w', encoding="utf-8")
         self.word_file.write(output)
         self.word_file.close()
-
         print("Wordset created")
 
-        output = "Count: " + str(len(unique_chars)) + "\n\n"
+    def generate_charset(self, data_filename, char_filename):
 
+        # Load required file
+        self.data_file = open(data_filename, "r", encoding="utf-8")
+
+        # Read file and split contents
+        content = self.data_file.read()
+        unique_chars = set(content)
+
+        # Create charset
+        output = "Count: " + str(len(unique_chars)) + "\n\n"
         for char in unique_chars:
             output += char + "\n"
 
+        # Output charset to file
         self.char_file = open(char_filename, 'w', encoding="utf-8")
         self.char_file.write(output)
         self.char_file.close()
-
         print("Charset created")
+
+    def generate_first_parse(self, data_filename, parsed_filename, sentiments_filename, alphabet_filename):
+
+        # Load required files to do the parsing
+        self.data_file = open(data_filename, "r", encoding="utf-8")
+        self.alphabet_file = open(alphabet_filename, "r", encoding="utf-8")
+
+        # Read the files and split contents
+        content = self.data_file.read()
+        lines = content.split("\n")
+        alphabet = self.alphabet_file.read().split(",")
 
         output = ""
         sentiments = ""
 
-        print(len(lines))
-
+        # Create parsed file
         for line in lines:
             try:
                 sentiment, message = line.split(",\"")
-
                 sentiments += sentiment + "\n"
-
                 sentiment = str.lower(sentiment)
 
                 # If line is not starting by a sentiment, skip it
@@ -68,9 +86,12 @@ class Parser:
                 # Remove URLs
                 message = re.sub(r'\w+:\/{2}[\d\w-]+(\.[\d\w-]+)*(?:(?:\/[^\s/]*))*', '', message, flags=re.MULTILINE)
 
+                # Remove unintentional skiplines
+                message = re.sub(r'\[[^\]]*\]', '', message)
+
+                # Split all words from each line
                 words = message.split()
                 new_message = ""
-
                 for word in words:
                     new_word = ""
 
@@ -82,7 +103,7 @@ class Parser:
                         if char in alphabet:
                             new_word += char
 
-                    # Remove white spaces
+                    # Remove remaining white spaces
                     new_word.strip()
 
                     # Remove character repetitions
@@ -94,17 +115,18 @@ class Parser:
             except ValueError:
                 pass
 
+        # Output to parsed file
         parsed_file = open(parsed_filename, 'w', encoding="utf8")
         parsed_file.write(output)
         parsed_file.close()
 
-        sentiment_file = open("sentiments.csv", "w", encoding="utf-8")
+        # Sentiments to sentiments file
+        sentiment_file = open(sentiments_filename, "w", encoding="utf-8")
         sentiment_file.write(sentiments)
         sentiment_file.close()
-
         print("File parsed")
 
-    def createdict(self, parsed_filename, dict_filename):
+    def first_dictionary(self, parsed_filename, dict_filename):
         parsed_file = open(parsed_filename, "r", encoding="utf-8")
         content = str.lower(parsed_file.read())
 
@@ -130,9 +152,56 @@ class Parser:
 
         print("Dictionary created")
 
+    def second_parse(self, parse_filename, final_parse_filename, updated_dict_filename):
+        self.final_parse_file = open(final_parse_filename, 'w', encoding="utf-8")
+        self.updated_dict_file = open(updated_dict_filename, 'r', encoding="utf-8")
+
+        allowed_words = []
+
+        dict_content = self.updated_dict_file.read()
+        dict_lines = dict_content.split("\n")
+
+        for line in dict_lines:
+            allowed_words.append(line.split(",")[0])
+
+        parse_file = open(parse_filename, 'r', encoding="utf-8")
+        content = parse_file.read()
+        parse_file.close()
+
+        lines = content.split("\n")
+
+        new_content = ""
+        percent = 0
+
+        print("0%")
+
+        iterations = 0
+
+        for line in lines:
+            iterations += 1
+
+            if iterations % int(len(lines) / 100) == 0:
+                percent += 1
+                print(str(percent) + "%")
+
+            words = line.split(",")
+            new_line = ""
+
+            for word in words:
+                if word in allowed_words:
+                    new_line += word + ","
+
+            new_content += new_line[:-1] + "\n"
+
+        self.final_parse_file.write(new_content[:-1])
+
+        print("Finished second parse")
+
     def closefiles(self):
-        self.data_file.close()
-        self.alphabet_file.close()
-        self.dict_file.close()
-        self.char_file.close()
-        self.word_file.close()
+        if self.data_file: self.data_file.close()
+        if self.alphabet_file: self.alphabet_file.close()
+        if self.dict_file: self.dict_file.close()
+        if self.char_file: self.char_file.close()
+        if self.word_file: self.word_file.close()
+        if self.updated_dict_file: self.updated_dict_file.close()
+        if self.final_parse_file: self.final_parse_file.close()
