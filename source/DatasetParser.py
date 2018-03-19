@@ -1,11 +1,17 @@
 import operator
+import sys
 import re
+import nltk
+
+from nltk import tokenize
+from nltk.sentiment.util import *
 
 
 class Parser:
     def __init__(self):
         self.dict = {}
         self.data_file = None
+        self.stopwords_file = None
         self.alphabet_file = None
         self.dict_file = None
         self.char_file = None
@@ -54,22 +60,35 @@ class Parser:
         self.char_file.close()
         print("Charset created")
 
-    def generate_first_parse(self, data_filename, parsed_filename, sentiments_filename, alphabet_filename):
+    def generate_first_parse(self, data_filename, stopwords_filename, parsed_filename, sentiments_filename, alphabet_filename):
 
         # Load required files to do the parsing
         self.data_file = open(data_filename, "r", encoding="utf-8")
         self.alphabet_file = open(alphabet_filename, "r", encoding="utf-8")
+        self.stopwords_file = open(stopwords_filename, "r", encoding="utf-8")
 
         # Read the files and split contents
         content = self.data_file.read()
         lines = content.split("\n")
         alphabet = self.alphabet_file.read().split(",")
+        french_stopwords = self.stopwords_file.read().split("\n")
+        print(french_stopwords)
 
+        # Prepare variables
         output = ""
         sentiments = ""
+        percent = 0
+        iterations = 0
+        print("0%")
 
         # Create parsed file
         for line in lines:
+            iterations += 1
+
+            if iterations % int(len(lines) / 100) == 0:
+                percent += 1
+                print(str(percent) + "%")
+
             try:
                 sentiment, message = line.split(",\"")
                 sentiments += sentiment + "\n"
@@ -89,27 +108,26 @@ class Parser:
                 # Remove unintentional skiplines
                 message = re.sub(r'\[[^\]]*\]', '', message)
 
-                # Split all words from each line
-                words = message.split()
+                # Change all characters to lower case
+                message = str.lower(str(message))
+
+                message_list = list(message)
                 new_message = ""
-                for word in words:
-                    new_word = ""
 
-                    # Change word to lower case
-                    word = str.lower(str(word))
+                for char in message_list:
+                    if char in alphabet:
+                        new_message += char
 
-                    # Remove special characters
-                    for char in word:
-                        if char in alphabet:
-                            new_word += char
+                word_list = tokenize.word_tokenize(new_message, language='french')
 
-                    # Remove remaining white spaces
-                    new_word.strip()
+                new_message = ""
 
+                for word in word_list:
                     # Remove character repetitions
-                    new_word = re.sub(r'([a-z])\1+', r'\1', new_word)
+                    word = re.sub(r'([a-z])\1+', r'\1', word)
 
-                    new_message += new_word + ","
+                    if word not in french_stopwords:
+                        new_message += word + ","
 
                 output += new_message[:-1] + "\n"
             except ValueError:
@@ -185,17 +203,81 @@ class Parser:
                 print(str(percent) + "%")
 
             words = line.split(",")
-            new_line = ""
+            new_words = []
 
             for word in words:
                 if word in allowed_words:
-                    new_line += word + ","
+                    new_words.append(word)
+
+            new_words = mark_negation(new_words)
+            new_line = ""
+
+            for word in new_words:
+                new_line += word + ","
 
             new_content += new_line[:-1] + "\n"
 
         self.final_parse_file.write(new_content[:-1])
 
         print("Finished second parse")
+
+    def generate_featuresrets(self, parsed_filename, dict_filename, sentiments_filename, featuresets_filename):
+        data_file = open(parsed_filename, 'r', encoding='utf-8')
+        dict_file = open(dict_filename, 'r', encoding='utf-8')
+        sent_file = open(sentiments_filename, 'r', encoding='utf-8')
+
+        data_lines = data_file.read().split("\n")
+        data = []
+
+        for line in data_lines:
+            data.append(line.split(","))
+
+        sent_lines = sent_file.read().split("\n")
+        all_words = set()
+
+        for line in dict_file.read().split("\n")[:2000]:
+            all_words.add(line.split(",")[0])
+
+        featuresets = []
+
+        iterations = 0
+        percent = 0
+
+        print("0%")
+
+        for i in range(0, len(data_lines)):
+            iterations += 1
+
+            if iterations % int(len(data_lines) / 100) == 0:
+                percent += 1
+                print(str(percent) + "%")
+
+            featuresets.append((self.document_features(data[i], all_words), sent_lines[i]))
+
+        data_size = len(data_lines)
+        train_size = int(data_size * 0.8)
+
+        random.shuffle(featuresets)
+        training_set = featuresets[:train_size]
+        testing_set = featuresets[train_size:data_size]
+
+        classifier = nltk.NaiveBayesClassifier.train(training_set)
+
+        classifier.show_most_informative_features()
+
+        print(nltk.classify.accuracy(classifier, testing_set))
+
+    @staticmethod
+    def document_features(document, all_words):
+        features = {}
+
+        for word in all_words:
+            if word in document:
+                features[word] = True
+            else:
+                features[word] = False
+
+        return features
 
     def closefiles(self):
         if self.data_file: self.data_file.close()
