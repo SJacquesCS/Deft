@@ -1,65 +1,30 @@
-from source.DatasetParser import Parser
-import platform
+from source.DeftTool import Parser
 
-
-dataset_file = "../datasets/deft_dataset.csv"
-wordset_file = "../wordsets/deft_wordset.csv"
-charset_file = "../charsets/deft_charset.csv"
-transport_parse_file = "../parsed/deft_parse_transport.csv"
-sentiment_parse_file = "../parsed/deft_parse_sentiment.csv"
-alphabet_file = "../alphabets/deft_alphabet.csv"
-stopwords_file = "../stopwords/deft_stopwords.csv"
-transport_dictionary_file = "../dictionaries/deft_dictionary_transport.csv"
-sentiment_dictionary_file = "../dictionaries/deft_dictionary_sentiment.csv"
-transport_updated_dictionary_file = "../dictionaries/updated_deft_dictionary_transport.csv"
-sentiment_updated_dictionary_file = "../dictionaries/updated_deft_dictionary_sentiment.csv"
-transport_final_parse_file = "../parsed/final_deft_parse_transport.csv"
-sentiment_final_parse_file = "../parsed/final_deft_parse_sentiment.csv"
-transport_nb_classifier_file = "../classifiers/deft_nb_classifier_transport.pickle"
-sentiment_nb_classifier_file = "../classifiers/deft_nb_classifier_sentiment.pickle"
+sentiment_parse_final_file = "../parsed/final_re_deft_parse_sentiment.csv"
+transport_entropy_parse_final_file = "../parsed/final_re_ent_deft_parse_transport.csv"
+sentiment_dictionary_final_file = "../dictionaries/updated_re_deft_dictionary_sentiment.csv"
+transport_entropy_dictionary_final_file = "../entropy/deft_entropy_transport_titan.csv"
+sentiment_svm_final_classifier_file = "../classifiers/deft_svm_classifier_sentiment_final.pickle"
+transport_entropy_svm_final_classifier_file = "../classifiers/deft_svm_classifier_transport_entropy_final.pickle"
 
 parser = Parser()
 
-parser.generate_wordset(data_filename=dataset_file,
-                        word_filename=wordset_file)
+parser.learn(transport_entropy_parse_final_file,
+             transport_entropy_dictionary_final_file,
+             transport_entropy_svm_final_classifier_file,
+             classifier="svm",
+             type="trsp")
 
-parser.generate_charset(data_filename=dataset_file,
-                        char_filename=charset_file)
-
-parser.generate_first_parse(data_filename=dataset_file,
-                            stopwords_filename=stopwords_file,
-                            parsed_filename=transport_parse_file,
-                            alphabet_filename=alphabet_file,
-                            is_transport=True)
-
-parser.generate_first_parse(data_filename=dataset_file,
-                            stopwords_filename=stopwords_file,
-                            parsed_filename=sentiment_parse_file,
-                            alphabet_filename=alphabet_file,
-                            is_transport=False)
-
-parser.generate_dictionary(parsed_filename=transport_parse_file,
-                           dict_filename=transport_dictionary_file,
-                           is_transport=True)
-
-parser.generate_dictionary(parsed_filename=sentiment_parse_file,
-                           dict_filename=sentiment_dictionary_file,
-                           is_transport=False)
-
-parser.generate_second_parse(parse_filename=transport_parse_file,
-                             final_parse_filename=transport_final_parse_file,
-                             updated_dict_filename=transport_updated_dictionary_file,
-                             is_transport=True)
-
-parser.generate_second_parse(parse_filename=sentiment_parse_file,
-                             final_parse_filename=sentiment_final_parse_file,
-                             updated_dict_filename=sentiment_updated_dictionary_file,
-                             is_transport=False)
+# parser.calculate_entropy(dictionary_filename="../dictionaries/deft_dictionary_transport.csv",
+#                          entropy_filename="../entropy/deft_entropy_transport.csv",
+#                          parsed_filename="../parsed/deft_parse_transport.csv",
+#                          type="trsp")
 #
-# parser.learn_naive_bayes(parsed_filename=transport_final_parse_file,
-#                          dict_filename=transport_updated_dictionary_file,
-#                          nb_classifier_filename=transport_nb_classifier_file)
-#
-# parser.learn_naive_bayes(parsed_filename=sentiment_final_parse_file,
-#                          dict_filename=sentiment_updated_dictionary_file,
-#                          nb_classifier_filename=sentiment_nb_classifier_file)
+# parser.generate_second_parse(parse_filename="../parsed/deft_parse_transport.csv",
+#                              final_parse_filename="../parsed/final_re_deft_parse_transport_2.csv",
+#                              is_transport=True,
+#                              updated_dict_filename="../dictionaries/updated_deft_dictionary_transport.csv")
+
+# parser.generate_dict(parsed_filename="../parsed/final_re_deft_parse_transport.csv",
+#                      dict_filename="../dictionaries/updated_re_deft_dictionary_transport.csv",
+#                      is_transport=True)

@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/source/Main.py" line="56" mnemonic="9" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="63daec5b-cdf0-4668-b960-d2d1c47fcc0a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/alphabets/airlines_alphabet.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/charsets/airlines_charset.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/airlines_dataset.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dictionaries/airlines_dictionary.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dictionaries/deft_dictionary.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dictionaries/deft_dictionary_updated.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/parsed_datasets/airlines_parse.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/parsed_datasets/deft_parse.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/parsed_datasets/final_deft_parse.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sentiments/deft_sentiments.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wordsets/airlines_wordset.csv" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dictionaries/deft_dictionary_transport_titan.csv" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classifiers/deft_nb_classifier_transport.pickle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dictionaries/deft_dictionary_transport.csv" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/source/DatasetParser.py" afterPath="$PROJECT_DIR$/source/DeftTool.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alphabets/deft_alphabet.csv" afterPath="$PROJECT_DIR$/alphabets/deft_alphabet.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/charsets/deft_charset.csv" afterPath="$PROJECT_DIR$/charsets/deft_charset.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/DatasetParser.py" afterPath="$PROJECT_DIR$/source/DatasetParser.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dictionaries/deft_dictionary_sentiment.csv" afterPath="$PROJECT_DIR$/dictionaries/deft_dictionary_sentiment.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parsed/deft_parse_sentiment.csv" afterPath="$PROJECT_DIR$/parsed/deft_parse_sentiment.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parsed/deft_parse_transport.csv" afterPath="$PROJECT_DIR$/parsed/deft_parse_transport.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parsed/final_deft_parse_sentiment.csv" afterPath="$PROJECT_DIR$/parsed/final_deft_parse_sentiment.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parsed/final_deft_parse_transport.csv" afterPath="$PROJECT_DIR$/parsed/final_deft_parse_transport.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/LibraryTest.py" afterPath="$PROJECT_DIR$/source/LibraryTest.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/source/Main.py" afterPath="$PROJECT_DIR$/source/Main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wordsets/deft_wordset.csv" afterPath="$PROJECT_DIR$/wordsets/deft_wordset.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stopwords/deft_stopwords.csv" afterPath="$PROJECT_DIR$/stopwords/deft_stopwords.csv" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,21 +31,48 @@
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="38" column="47" lean-forward="true" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <marker date="1521580326123" expanded="true" signature="1084:3259" ph="..." />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DatasetParser.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/DatasetParser.py">
+      <file leaf-file-name="LibraryTest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/LibraryTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="192" column="26" lean-forward="true" selection-start-line="192" selection-start-column="26" selection-end-line="192" selection-end-column="26" />
+            <state relative-caret-position="204">
+              <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="outfile.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/source/outfile.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8262">
+              <caret line="486" column="128" lean-forward="false" selection-start-line="486" selection-start-column="128" selection-end-line="486" selection-end-column="128" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_parsed.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/parsed/test_parsed.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DeftTool.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source/DeftTool.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="86" column="28" lean-forward="false" selection-start-line="86" selection-start-column="28" selection-end-line="86" selection-end-column="28" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -65,14 +84,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>je viens de faire un long trajet en bus , j' ai croisé des dizaines de</find>
-      <find>@Rodnorov déjà dis-toi que j' ai 45 min de bus le matin</find>
-      <find>NEGATION</find>
-      <find>PLAISIR</find>
-      <find>SOURCE</find>
-      <find>first_parse</find>
-      <find>classify</find>
-      <find>relance</find>
       <find>jeune</find>
       <find>sncf</find>
       <find>nul</find>
@@ -90,8 +101,19 @@
       <find>bus</find>
       <find>lib</find>
       <find>soir</find>
-      <find>a</find>
       <find>n</find>
+      <find>dictionary</find>
+      <find>fuck</find>
+      <find>à</find>
+      <find>train</find>
+      <find>cnf</find>
+      <find>rer</find>
+      <find>est</find>
+      <find>1</find>
+      <find>arret</find>
+      <find>a</find>
+      <find>les</find>
+      <find>,</find>
     </findStrings>
     <replaceStrings>
       <replace>generate_first_parse</replace>
@@ -110,23 +132,39 @@
         <option value="$PROJECT_DIR$/source/DictionaryBuilder.py" />
         <option value="D:/Applications/Python/Lib/site-packages/nltk/sentiment/util.py" />
         <option value="$PROJECT_DIR$/datasets/deft_dataset.csv" />
-        <option value="$PROJECT_DIR$/stopwords/deft_stopwords.csv" />
         <option value="$PROJECT_DIR$/parsed_datasets/final_deft_parse.csv" />
         <option value="C:/Program Files (x86)/Python/Lib/site-packages/nltk/sentiment/util.py" />
         <option value="C:/Program Files (x86)/Python/Lib/site-packages/nltk/classify/naivebayes.py" />
         <option value="$PROJECT_DIR$/dictionaries/deft_dictionary_updated.csv" />
         <option value="$PROJECT_DIR$/dictionaries/deft_dictionary.csv" />
         <option value="$PROJECT_DIR$/dictionaries/updated_deft_dictionary.csv" />
-        <option value="$PROJECT_DIR$/source/LibraryTest.py" />
-        <option value="$PROJECT_DIR$/alphabets/deft_alphabet.csv" />
+        <option value="$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/nltk/classify/maxent.py" />
+        <option value="$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/nltk/classify/decisiontree.py" />
         <option value="$PROJECT_DIR$/dictionaries/deft_dictionary_sentiment.csv" />
-        <option value="$PROJECT_DIR$/dictionaries/deft_dictionary_transport.csv" />
-        <option value="$PROJECT_DIR$/source/Main.py" />
         <option value="$PROJECT_DIR$/source/DatasetParser.py" />
+        <option value="$PROJECT_DIR$/dictionaries/deft_3gram_dictionary_transport.csv" />
+        <option value="$PROJECT_DIR$/dictionaries/deft_4gram_dictionary_transport.csv" />
+        <option value="$PROJECT_DIR$/entropy/deft_4gram_entropy_transport.csv" />
+        <option value="$PROJECT_DIR$/dictionaries/deft_4gram_dictionary_sentiment.csv" />
+        <option value="$PROJECT_DIR$/dictionaries/deft_3gram_dictionary_sentiment.csv" />
+        <option value="$PROJECT_DIR$/entropy/deft_3gram_entropy_transport.csv" />
+        <option value="$PROJECT_DIR$/tests/tests_input_data.csv" />
+        <option value="$PROJECT_DIR$/dictionaries/deft_dictionary_transport.csv" />
+        <option value="$PROJECT_DIR$/dictionaries/updated_re_deft_dictionary_sentiment.csv" />
+        <option value="$PROJECT_DIR$/stopwords/deft_stopwords.csv" />
+        <option value="$PROJECT_DIR$/alphabets/deft_alphabet.csv" />
+        <option value="$PROJECT_DIR$/entropy/deft_entropy_transport.csv" />
+        <option value="$PROJECT_DIR$/dictionaries/updated_re_deft_dictionary_transport.csv" />
+        <option value="$PROJECT_DIR$/results/deft_results_sentiments.csv" />
+        <option value="$PROJECT_DIR$/source/Main.py" />
+        <option value="$PROJECT_DIR$/results/deft_results_ent_transport.csv" />
+        <option value="$PROJECT_DIR$/source/LibraryTest.py" />
+        <option value="$PROJECT_DIR$/source/outfile.csv" />
+        <option value="$PROJECT_DIR$/source/DeftTool.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="960" />
     <option name="height" value="1040" />
   </component>
@@ -148,8 +186,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -180,7 +218,22 @@
             <path>
               <item name="Deft" type="b2602c69:ProjectViewProjectNode" />
               <item name="Deft" type="462c0819:PsiDirectoryNode" />
+              <item name="entropy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Deft" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Deft" type="462c0819:PsiDirectoryNode" />
+              <item name="ngrams" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Deft" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Deft" type="462c0819:PsiDirectoryNode" />
               <item name="parsed" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Deft" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Deft" type="462c0819:PsiDirectoryNode" />
+              <item name="results" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Deft" type="b2602c69:ProjectViewProjectNode" />
@@ -191,6 +244,11 @@
               <item name="Deft" type="b2602c69:ProjectViewProjectNode" />
               <item name="Deft" type="462c0819:PsiDirectoryNode" />
               <item name="stopwords" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Deft" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Deft" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -220,7 +278,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python.LibraryTest">
     <configuration name="DatasetParser (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -233,12 +291,12 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Deft" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/DatasetParser.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\Jacques\PycharmProjects\Deft\source\DeftTool.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="DatasetParser" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="DeftTool" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -250,7 +308,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Deft" />
-      <option name="SCRIPT_NAME" value="C:\Users\Jacques\PycharmProjects\Deft\source\DatasetParser.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/DeftTool.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -308,18 +366,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.Main" />
-      <item index="1" class="java.lang.String" itemvalue="Python.DatasetParser" />
-      <item index="2" class="java.lang.String" itemvalue="Python.LibraryTest" />
-      <item index="3" class="java.lang.String" itemvalue="Python.naivebayes" />
-      <item index="4" class="java.lang.String" itemvalue="Python.DatasetParser (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.LibraryTest" />
+      <item index="2" class="java.lang.String" itemvalue="Python.naivebayes" />
+      <item index="3" class="java.lang.String" itemvalue="Python.DatasetParser (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python.DeftTool" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Main" />
-        <item index="1" class="java.lang.String" itemvalue="Python.DatasetParser (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.LibraryTest" />
-        <item index="3" class="java.lang.String" itemvalue="Python.naivebayes" />
-        <item index="4" class="java.lang.String" itemvalue="Python.DatasetParser" />
+        <item index="0" class="java.lang.String" itemvalue="Python.LibraryTest" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Main" />
+        <item index="2" class="java.lang.String" itemvalue="Python.DeftTool" />
+        <item index="3" class="java.lang.String" itemvalue="Python.DatasetParser (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.naivebayes" />
       </list>
     </recent_temporary>
   </component>
@@ -340,15 +398,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="960" height="1040" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2611111" sideWeight="0.49463806" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14978679" sideWeight="0.49463806" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20974576" sideWeight="0.5109375" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23646408" sideWeight="0.4890625" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30076003" sideWeight="0.4890625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23940678" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.118229166" sideWeight="0.5053619" order="2" side_tool="true" content_ui="tabs" />
@@ -360,30 +417,9 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944915" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281768" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20974576" sideWeight="0.5109375" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23646408" sideWeight="0.4890625" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23940678" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.49463806" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944915" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24640884" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.118229166" sideWeight="0.5053619" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -395,166 +431,177 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/source/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <marker date="1521580326123" expanded="true" signature="1084:3259" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/DatasetParser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="3" column="10" lean-forward="false" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <marker date="1521580326123" expanded="true" signature="1084:3259" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/DatasetParser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/wordobject.py" />
-    <entry file="file://$PROJECT_DIR$/source/DictionaryBuilder.py" />
-    <entry file="file://$PROJECT_DIR$/source/LibraryTest.py" />
-    <entry file="file://$PROJECT_DIR$/source/wordobject.py" />
-    <entry file="file://$PROJECT_DIR$/source/DictionaryBuilder.py" />
-    <entry file="file://$PROJECT_DIR$/source/test.png" />
-    <entry file="file://$PROJECT_DIR$/dictionaries/airlines_dictionary.csv" />
-    <entry file="file://$PROJECT_DIR$/alphabets/airlines_alphabet.csv" />
-    <entry file="file://$PROJECT_DIR$/source/sentiments.csv" />
-    <entry file="file://$PROJECT_DIR$/charsets/deft_charset.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wordsets/deft_wordset.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.csv" />
-    <entry file="file://D:/Applications/Python/Lib/site-packages/nltk/classify/naivebayes.py" />
-    <entry file="file://D:/Applications/Python/Lib/site-packages/nltk/sentiment/util.py" />
-    <entry file="file://D:/Applications/Python/Lib/site-packages/nltk/twitter/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/source/test.csv" />
-    <entry file="file://C:/Program Files (x86)/Python/Lib/site-packages/nltk/sentiment/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Python/Lib/re.py" />
-    <entry file="file://$PROJECT_DIR$/parsed_datasets/final_parsed_dataset.csv" />
-    <entry file="file://C:/Program Files (x86)/Python/Lib/site-packages/nltk/sentiment/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="113" column="41" lean-forward="true" selection-start-line="113" selection-start-column="41" selection-end-line="113" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Python/Lib/site-packages/nltk/classify/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="65" column="22" lean-forward="false" selection-start-line="65" selection-start-column="15" selection-end-line="65" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Python/Lib/site-packages/nltk/sentiment/sentiment_analyzer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="70" column="24" lean-forward="false" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Python/Lib/site-packages/nltk/classify/naivebayes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3164">
-          <caret line="21" column="53" lean-forward="true" selection-start-line="21" selection-start-column="53" selection-end-line="21" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/nltk/sentiment/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2307">
-          <caret line="154" column="4" lean-forward="false" selection-start-line="154" selection-start-column="4" selection-end-line="154" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/featuresets/deft_featuresets.csv" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/nltk/classify/naivebayes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1752">
-          <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/nltk/classify/positivenaivebayes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="87" column="6" lean-forward="false" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dictionaries/deft_dictionary_updated.csv" />
-    <entry file="file://$PROJECT_DIR$/stopwords/deft_stopwords.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2448">
-          <caret line="144" column="4" lean-forward="true" selection-start-line="144" selection-start-column="4" selection-end-line="144" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dictionaries/deft_dictionary.csv" />
     <entry file="file://$PROJECT_DIR$/parsed/deft_parse.csv" />
     <entry file="file://$PROJECT_DIR$/sentiments/deft_sentiments.csv" />
     <entry file="file://$PROJECT_DIR$/dictionaries/updated_deft_dictionary.csv" />
-    <entry file="file://$PROJECT_DIR$/datasets/deft_dataset.csv">
+    <entry file="file://$PROJECT_DIR$/parsed/final_deft_parse.csv" />
+    <entry file="file://$PROJECT_DIR$/parsed/final_deft_parse_sentiment.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="104" column="16" lean-forward="false" selection-start-line="104" selection-start-column="16" selection-end-line="104" selection-end-column="16" />
+        <state relative-caret-position="601919">
+          <caret line="35407" column="38" lean-forward="false" selection-start-line="35407" selection-start-column="38" selection-end-line="35407" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parsed/final_deft_parse.csv" />
-    <entry file="file://$PROJECT_DIR$/alphabets/deft_alphabet.csv">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/nltk/classify/maxent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="34" lean-forward="true" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parsed/deft_parse_sentiment.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/nltk/classify/decisiontree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1694">
+          <caret line="129" column="73" lean-forward="true" selection-start-line="129" selection-start-column="73" selection-end-line="129" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/sklearn/ensemble/tests/test_bagging.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="102" column="22" lean-forward="false" selection-start-line="102" selection-start-column="22" selection-end-line="102" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/sklearn/svm/classes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18173">
+          <caret line="1078" column="13" lean-forward="false" selection-start-line="1078" selection-start-column="13" selection-end-line="1078" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasets/deft_dataset.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="28029" column="16" lean-forward="false" selection-start-line="28029" selection-start-column="16" selection-end-line="28029" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parsed/deft_parse_transport.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="15" column="40" lean-forward="false" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ngrams/deft_ngram_transport.csv" />
+    <entry file="file://$PROJECT_DIR$/dictionaries/deft_ngrams_dictionary_transport.csv" />
+    <entry file="file://$PROJECT_DIR$/ngrams/deft_3gram_transport.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dictionaries/deft_4gram_dictionary_transport.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="41963" column="6" lean-forward="false" selection-start-line="41963" selection-start-column="6" selection-end-line="41963" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parsed/deft_ngrams_parse_sentiment.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="95" lean-forward="false" selection-start-line="0" selection-start-column="95" selection-end-line="0" selection-end-column="95" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dictionaries/deft_4gram_dictionary_sentiment.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479604">
+          <caret line="28212" column="6" lean-forward="false" selection-start-line="28212" selection-start-column="6" selection-end-line="28212" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ngrams/deft_3gram_sentiment.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ngrams/deft_4gram_sentiment.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dictionaries/deft_3gram_dictionary_transport.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="823">
+          <caret line="13307" column="5" lean-forward="false" selection-start-line="13307" selection-start-column="5" selection-end-line="13307" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entropy/deft_4gram_entropy_transport.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-295801">
+          <caret line="1564" column="23" lean-forward="true" selection-start-line="1564" selection-start-column="23" selection-end-line="1564" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parsed/deft_ngrams_parse_transport.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entropy/deft_3gram_entropy_transport.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108120">
+          <caret line="6360" column="8" lean-forward="false" selection-start-line="6360" selection-start-column="8" selection-end-line="6360" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dictionaries/deft_3gram_dictionary_sentiment.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dictionaries/deft_dictionary_transport_titan.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="778">
+          <caret line="27846" column="9" lean-forward="false" selection-start-line="27846" selection-start-column="9" selection-end-line="27846" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/entropy/deft_entropy_transport_titan.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="778">
+          <caret line="7499" column="28" lean-forward="false" selection-start-line="7499" selection-start-column="28" selection-end-line="7499" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parsed/final_deft_parse_transport.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="764">
+          <caret line="68866" column="44" lean-forward="false" selection-start-line="68866" selection-start-column="44" selection-end-line="68866" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/tests_input_data.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="7815" column="112" lean-forward="false" selection-start-line="7815" selection-start-column="112" selection-end-line="7815" selection-end-column="112" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dictionaries/updated_deft_dictionary_transport.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="505">
+          <caret line="2999" column="10" lean-forward="true" selection-start-line="2999" selection-start-column="10" selection-end-line="2999" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -565,75 +612,141 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dictionaries/deft_dictionary_transport.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="2999" column="10" lean-forward="false" selection-start-line="2999" selection-start-column="10" selection-end-line="2999" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dictionaries/deft_dictionary_sentiment.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="5749" column="11" lean-forward="false" selection-start-line="5749" selection-start-column="11" selection-end-line="5749" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/source/LibraryTest.py">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
+          <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parsed/final_deft_parse_sentiment.csv">
+    <entry file="file://$PROJECT_DIR$/parsed/final_re_deft_parse_transport_2.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602327">
-          <caret line="35431" column="15" lean-forward="false" selection-start-line="35431" selection-start-column="15" selection-end-line="35431" selection-end-column="15" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parsed/deft_parse_transport.csv">
+    <entry file="file://$PROJECT_DIR$/parsed/final_re_deft_parse_sentiment.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="68866" column="43" lean-forward="false" selection-start-line="68866" selection-start-column="43" selection-end-line="68866" selection-end-column="43" />
-          <folding />
+        <state relative-caret-position="602344">
+          <caret line="35432" column="49" lean-forward="false" selection-start-line="35432" selection-start-column="49" selection-end-line="35432" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parsed/deft_parse_sentiment.csv">
+    <entry file="file://$PROJECT_DIR$/parsed/final_re_deft_parse_transport.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="68" lean-forward="false" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parsed/final_deft_parse_transport.csv">
+    <entry file="file://$PROJECT_DIR$/entropy/deft_entropy_transport.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="68866" column="14" lean-forward="true" selection-start-line="68866" selection-start-column="14" selection-end-line="68866" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="192">
+          <caret line="1207" column="12" lean-forward="false" selection-start-line="1207" selection-start-column="9" selection-end-line="1207" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/alphabets/deft_alphabet.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="74" lean-forward="false" selection-start-line="0" selection-start-column="74" selection-end-line="0" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stopwords/deft_stopwords.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2380">
+          <caret line="140" column="4" lean-forward="false" selection-start-line="140" selection-start-column="4" selection-end-line="140" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dictionaries/updated_re_deft_dictionary_transport.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139128">
+          <caret line="8184" column="7" lean-forward="false" selection-start-line="8184" selection-start-column="7" selection-end-line="8184" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dictionaries/updated_re_deft_dictionary_sentiment.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="16040" column="9" lean-forward="true" selection-start-line="16040" selection-start-column="9" selection-end-line="16040" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/deft_results_sentiments.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="7815" column="25" lean-forward="false" selection-start-line="7815" selection-start-column="25" selection-end-line="7815" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parsed/final_re_ent_deft_parse_transport.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="50934" column="34" lean-forward="false" selection-start-line="50934" selection-start-column="31" selection-end-line="50934" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/deft_results_ent_transport.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="22" lean-forward="false" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/deft_results_transport.csv" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/nltk/tokenize/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dictionaries/deft_dictionary_transport.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="205" column="10" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="14403" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="38" column="47" lean-forward="true" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <marker date="1521580326123" expanded="true" signature="1084:3259" ph="..." />
-          </folding>
+        <state relative-caret-position="306">
+          <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/DatasetParser.py">
+    <entry file="file://$PROJECT_DIR$/source/outfile.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="192" column="26" lean-forward="true" selection-start-line="192" selection-start-column="26" selection-end-line="192" selection-end-column="26" />
+        <state relative-caret-position="8262">
+          <caret line="486" column="128" lean-forward="false" selection-start-line="486" selection-start-column="128" selection-end-line="486" selection-end-column="128" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/LibraryTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parsed/test_parsed.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/DeftTool.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="86" column="28" lean-forward="false" selection-start-line="86" selection-start-column="28" selection-end-line="86" selection-end-column="28" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>

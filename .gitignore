@@ -99,3 +99,29 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+classifiers/deft_nb_classifier_sentiment\.pickle
+
+classifiers/deft_nb_classifier_transport\.pickle
+
+classifiers/deft_svm_classifier_sentiment_1\.pickle
+
+classifiers/deft_svm_classifier_sentiment_3gram\.pickle
+
+classifiers/deft_svm_classifier_sentiment_re\.pickle
+
+classifiers/deft_svm_classifier_sentiment\.pickle
+
+classifiers/deft_svm_classifier_transport_1\.pickle
+
+classifiers/deft_svm_classifier_transport_3gram_ent\.pickle
+
+classifiers/deft_svm_classifier_transport_entropy_final\.pickle
+
+classifiers/deft_svm_classifier_transport_re_ent\.pickle
+
+classifiers/deft_svm_classifier_transport_re\.pickle
+
+classifiers/deft_svm_classifier_transport\.pickle
+
+*.pickle
